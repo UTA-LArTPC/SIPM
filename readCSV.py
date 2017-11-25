@@ -112,7 +112,7 @@ def showPE(data_files, combine=False):
 					x_intensity[ch_data_f.lower()].append(intensity)
 					y_PE[ch_data_f.lower()].append(numPE)
 	plt.xlabel("LED Intensity (%)")
-	plt.xlabel("Number of photoelectrons")
+	plt.ylabel("Number of photoelectrons")
 	if combine==True:
 		plt.title("Number of Photoelectrons vs LED Intensity")
 		plt.legend(loc='upper left')
@@ -137,5 +137,5 @@ else:
 
 files = os.listdir(os.getcwd())
 for File in files:
-    if File[-3:] != ".py" and File[-4:] != ".txt":
+    if File[-3:] != ".py" and File[-4:] != ".txt" and File[-4:] != ".git":
 	os.remove(File)
